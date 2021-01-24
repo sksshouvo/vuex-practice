@@ -1,20 +1,32 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img v-bind:src="logoPath">
+    <p>Full Application</p>
+    <newNavbar/>
+    <newBody/>
+    <newFooter/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Navbar from './components/navbar'
+import Body from './components/body'
+import Footer from './components/footer'
 export default {
   name: 'App',
+  data(){
+    return {
+      logoPath: "./assets/logo.png"
+    }
+  },
   components: {
-    HelloWorld
+    newNavbar: Navbar,
+    newBody: Body,
+    newFooter: Footer
   }
 }
-</script>
+
+    </script>
 
 <style>
 #app {
